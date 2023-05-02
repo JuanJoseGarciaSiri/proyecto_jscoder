@@ -2,48 +2,80 @@
 for (let i = 3; i>0 ; i--){
   alert("Ingresa a nuestro sitio en "+i);
 }
-let nombre= prompt("Ingresa tu nombre");
-alert("Bienvenido/a "+nombre+ "!");
 
-let edad= isNaN(Number(prompt("¿Cuál es tu edad "+nombre+"?")));
+let nombre=(prompt("Ingresa tu nombre"));
+let edad= Number(prompt("¿Cuál es tu edad "+nombre+"?"));
+let correo=prompt("ingresa tu correo electrónico");
+let pais=prompt("ingrese su pais de origen");
+
+class usuario {
+    constructor(nombre,edad,correo,pais){
+        this.nombre=nombre;
+        this.edad=edad;
+        this.correo=correo;
+        this.pais=pais;
+
+       this.presentacion=function (){
+        console.log("el nombre del usuario es "+nombre);
+        console.log("La edad del usuario es "+edad);
+        console.log("el correo del usuario es "+correo );
+        console.log("el usuario proviene de "+pais);
+       }
+    }
+
+}
+
+const usuarioNuevo= new usuario(nombre,edad,correo,pais);
+usuarioNuevo.presentacion();
 
 const MAYOR=18;
 if (edad >= MAYOR){
-    alert("Bienvenido/a a nuestra tienda "+nombre+" aquí vas a encontrar todos los talles de adulto y equipaciones deportivas para que rindas a tu maximo potencial");
+    alert("Bienvenido/a a nuestra tienda "+ usuarioNuevo.nombre+" aquí vas a encontrar todos los talles de adulto y equipaciones deportivas para que rindas a tu maximo potencial");
 
 }
     else if (edad < MAYOR){
-        alert("Bienvenido/a a nuestra tienda "+nombre+" tenemos todos los talles junior para todos los deportes en categorías inferiores");
+        alert("Bienvenido/a a nuestra tienda "+usuarioNuevo.nombre+" tenemos todos los talles junior para todos los deportes en categorías inferiores");
     }
         else {
-            alert("Debes ingresar un numero si quieres nuestras recomendaciones");
+        alert("Debes ingresar un numero si quieres nuestras recomendaciones");
 }
     
 
 
-let favorito=prompt("¿Cuál es tu deporte favorito?");
+let favorito=(prompt("¿Cuál es tu deporte favorito?"));
+let fav=favorito.toLowerCase();
 
-while (favorito != "esc"){
-switch (favorito){
-        case "Futbol" : alert("Como novedad de esta semana tenemos las camisetas de la Premier League 2022/2023");
+while (fav != "esc"){
+switch (fav){
+        case "futbol" : alert("Como novedad de esta semana tenemos las camisetas de la Premier League 2022/2023");
         break
-        case "Basketball" : alert("Te presentamos la camiseta autografiada por Kevin Durant");
+        case "basketball" : alert("Te presentamos la camiseta autografiada por Kevin Durant");
         break
-        case "Automovilismo": alert("Tenemos las equipaciones de todas las escuderías");
+        case "automovilismo": alert("Tenemos las equipaciones de todas las escuderías");
         break
-        case "Tenis" : alert("Raquetas, pelotas, lo que necesites, lo tenemos");
+        case "tenis" : alert("Raquetas, pelotas, lo que necesites, lo tenemos");
         break 
-        case "Futbol Americano": alert(" Todos los jerseys de la NFL pueden ser tuyos");
+        case "futbol americano": alert(" Todos los jerseys de la NFL pueden ser tuyos");
         break
-        case "Rugby": alert("Las camisetas de Los Teros, Las Cimarronas, Los Pumas, Las Leonas, pueden ser tuyas, pasá a echarles un vistazo");
+        case "rugby": alert("Las camisetas de Los Teros, Los Pumas, pueden ser tuyas, pasá a echarles un vistazo");
         break
 
-        default : alert("Deporte no encontrado, actualmente trabajamos con Futbol, Basketball, Automovilismo, Tenis, Futbol Americano y Rugby, no olvides las Mayusculas ,ingresa esc si quieres continuar al sitio ");
+        default : alert("Deporte no encontrado, actualmente trabajamos con futbol, basketball, automovilismo, tenis, futbol americano y rugby, ingresa esc si quieres continuar al sitio ");
         break;
     }
-    favorito=prompt("¿Cuál es tu deporte favorito?");
+    fav=prompt("¿Cuál es tu deporte favorito?");
 }
 
+
+const articulos=["zapatos","medias","pelotas","redes","canilleras","palos","shorts","hombreras","jerseys","camisetas","raquetas","cascos"]; 
+
+    articulos.sort();       //ORDENO ALFABETICAMNTE
+    
+    articulos.forEach((articulo)=>{     //DESPLIEGO LOS ARTICULOS EN CONSOLA
+        console.log(articulo);
+    })
+
+/*
 let locales=Number(prompt("ingrese la cantidad de torneos locales de su equipo favorito"));
 let continentales=Number(prompt("ingrese la cantidad de torneos continentales de su equipo favorito"));
 let mundiales= Number(prompt("ingrese la cantidad de torneos mundiales de su equipo favorito"));
@@ -55,3 +87,4 @@ function gloriasDeTuEquipo (locales, continentales, mundiales){
 }
 
 gloriasDeTuEquipo(locales, continentales, mundiales);
+*/

@@ -1,3 +1,4 @@
+///PRE-ENTREGA2//////////
 
 for (let i = 3; i>0 ; i--){
   alert("Ingresa a nuestro sitio en "+i);

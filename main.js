@@ -15,6 +15,7 @@ class usuario {
         this.correo=correo;
         this.pais=pais;
 
+        //FUNCION
        this.presentacion=function (){
         console.log("el nombre del usuario es "+nombre);
         console.log("La edad del usuario es "+edad);
@@ -67,24 +68,62 @@ switch (fav){
 }
 
 
-const articulos=["zapatos","medias","pelotas","redes","canilleras","palos","shorts","hombreras","jerseys","camisetas","raquetas","cascos"]; 
+//ARREGLO DE OBJETOS//
+const articulos=[
+    {nombre:"zapatos",
+    precio: 2000,},
+    {nombre:"medias",
+    precio: 200},
+    {nombre:"pelotas",
+    precio: 1300},
+    {nombre:"redes",
+    precio:200},
+    {nombre:"canilleras",
+    precio : 450},
+    {nombre:"palos",
+    precio:1000},
+    {nombre:"shorts",
+    precio:370},
+    {nombre:"hombreras",
+    precio:800},
+    {nombre:"jerseys",
+    precio:3000},
+    {nombre:"camisetas",
+    precio:2500},
+    {nombre:"raquetas",
+    precio: 1400},
+    {nombre:"cascos",
+    precio:3200}
+    ]; 
 
-    articulos.sort();       //ORDENO ALFABETICAMNTE
-    
-    articulos.forEach((articulo)=>{     //DESPLIEGO LOS ARTICULOS EN CONSOLA
-        console.log(articulo);
+    //FUNCION DE ORDEN SUP FOREACH 
+    articulos.forEach((articulo)=>{  
+        console.log(articulo.nombre);
     })
+    
+    //FUNCION DE ORDEN SUP FIND
+    let articuloElegido=prompt("ingrese el articulo a comprar (ver articulos disponibles en consola)");
+    articulos.find ((articulo) =>{ if (articulo.nombre === articuloElegido) alert(articulo.nombre +" "+"$"+articulo.precio)
+    });
+    
 
-/*
 let locales=Number(prompt("ingrese la cantidad de torneos locales de su equipo favorito"));
 let continentales=Number(prompt("ingrese la cantidad de torneos continentales de su equipo favorito"));
 let mundiales= Number(prompt("ingrese la cantidad de torneos mundiales de su equipo favorito"));
-let resultado=0;
 
-function gloriasDeTuEquipo (locales, continentales, mundiales){
-    resultado = locales + continentales + mundiales;
-    return (alert("Su equipo tiene un palmarés de "+resultado+" trofeos"));
+class equipo{
+ constructor(locales,continentales,mundiales){
+    this.locales=locales;
+    this.continentales=continentales;
+    this.mundiales=mundiales;
+    
+    //FUNCION
+    this.glorias=function(a,b,c){
+        let suma = a+b+c;
+        alert("Su equipo tiene un palmarés de "+suma+" trofeos")
+    }
+    }
 }
 
-gloriasDeTuEquipo(locales, continentales, mundiales);
-*/
+let cuadro=new equipo(locales,continentales,mundiales);
+cuadro.glorias(locales,continentales,mundiales);

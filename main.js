@@ -44,7 +44,7 @@ if (edad >= MAYOR){
     
 
 
-let favorito=(prompt("¿Cuál es tu deporte favorito?"));
+let favorito=(prompt("¿Cuál es tu deporte favorito? (escriba esc si desea continuar)"));
 let fav=favorito.toLowerCase();
 
 while (fav != "esc"){

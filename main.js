@@ -1,130 +1,68 @@
-///PRE-ENTREGA2//////////
 
-for (let i = 3; i>0 ; i--){
-  alert("Ingresa a nuestro sitio en "+i);
-}
+//CABECERA//
 
-let nombre=(prompt("Ingresa tu nombre"));
-let edad= Number(prompt("¿Cuál es tu edad "+nombre+"?"));
-let correo=prompt("ingresa tu correo electrónico");
-let pais=prompt("ingrese su pais de origen");
+let titulo = document.getElementsByClassName("presentacion")[0];
+titulo.innerHTML= "<h1>BIENVENIDO A CHAMPIONS STORE</h1>";
 
-class usuario {
-    constructor(nombre,edad,correo,pais){
-        this.nombre=nombre;
-        this.edad=edad;
-        this.correo=correo;
-        this.pais=pais;
+let subtitulo =  document.getElementsByClassName("subtitulo")[0];
+subtitulo.innerHTML="<h2> La tienda mas Gloriosa de todo Uruguay </h2>";
 
-        //FUNCION
-       this.presentacion=function (){
-        console.log("el nombre del usuario es "+nombre);
-        console.log("La edad del usuario es "+edad);
-        console.log("el correo del usuario es "+correo );
-        console.log("el usuario proviene de "+pais);
-       }
-    }
-
-}
-
-const usuarioNuevo= new usuario(nombre,edad,correo,pais);
-usuarioNuevo.presentacion();
-
-const MAYOR=18;
-if (edad >= MAYOR){
-    alert("Bienvenido/a a nuestra tienda "+ usuarioNuevo.nombre+" aquí vas a encontrar todos los talles de adulto y equipaciones deportivas para que rindas a tu maximo potencial");
-
-}
-    else if (edad < MAYOR){
-        alert("Bienvenido/a a nuestra tienda "+usuarioNuevo.nombre+" tenemos todos los talles junior para todos los deportes en categorías inferiores");
-    }
-        else {
-        alert("Debes ingresar un numero si quieres nuestras recomendaciones");
-}
-    
+//items menu principal//
+let items = document.getElementsByClassName("menuitem");
+items[0].innerHTML="home";
+items[1].innerHTML="Nosotros";
+items[2].innerHTML="Promociones";
+items[3].innerHTML="Contacto";
 
 
-let favorito=(prompt("¿Cuál es tu deporte favorito? (escriba esc si desea continuar)"));
-let fav=favorito.toLowerCase();
+///SECCIONES///
 
-while (fav != "esc"){
-switch (fav){
-        case "futbol" : alert("Como novedad de esta semana tenemos las camisetas de la Premier League 2022/2023");
-        break
-        case "basketball" : alert("Te presentamos la camiseta autografiada por Kevin Durant");
-        break
-        case "automovilismo": alert("Tenemos las equipaciones de todas las escuderías");
-        break
-        case "tenis" : alert("Raquetas, pelotas, lo que necesites, lo tenemos");
-        break 
-        case "futbol americano": alert(" Todos los jerseys de la NFL pueden ser tuyos");
-        break
-        case "rugby": alert("Las camisetas de Los Teros, Los Pumas, pueden ser tuyas, pasá a echarles un vistazo");
-        break
+//SECCION DEPORTES//
+let listaDep = document.createElement("listaDep");
+listaDep.innerHTML="<li> Futbol </li> <li> Basketball </li> <li> Rugby </li> <li> Hockey </li> <li> Futbol Americano</li> ";
+let seclistaDep = document.getElementsByClassName("listaDep")[0];
+seclistaDep.appendChild(listaDep);
 
-        default : alert("Deporte no encontrado, actualmente trabajamos con futbol, basketball, automovilismo, tenis, futbol americano y rugby, ingresa esc si quieres continuar al sitio ");
-        break;
-    }
-    fav=prompt("¿Cuál es tu deporte favorito?");
-}
+let deportes = document.createElement("div");
+deportes.innerHTML="<h2>DEPORTES</h2>";
+let secdeportes = document.getElementsByClassName("deportes")[0];
+secdeportes.appendChild(deportes);
 
+//SECCION INDUMENTARIA//
+let listaInd = document.createElement("listaInd");
+listaInd.innerHTML="<li> Premier League</li><li> liga Uruguaya</li><li> liga Argentina</li><li> liga española</li><li> Brasileirao </li><li> NBA </li><li> NFL </li><li> Superliga Rugby </li>";
+let listaubicacion= document.getElementsByClassName("listaIN")[0];
+listaubicacion.appendChild(listaInd);
 
-//ARREGLO DE OBJETOS//
-const articulos=[
-    {nombre:"zapatos",
-    precio: 2000,},
-    {nombre:"medias",
-    precio: 200},
-    {nombre:"pelotas",
-    precio: 1300},
-    {nombre:"redes",
-    precio:200},
-    {nombre:"canilleras",
-    precio : 450},
-    {nombre:"palos",
-    precio:1000},
-    {nombre:"shorts",
-    precio:370},
-    {nombre:"hombreras",
-    precio:800},
-    {nombre:"jerseys",
-    precio:3000},
-    {nombre:"camisetas",
-    precio:2500},
-    {nombre:"raquetas",
-    precio: 1400},
-    {nombre:"cascos",
-    precio:3200}
-    ]; 
+let ind = document.createElement("div");
+ind.innerHTML="<h2>INDUMENTARIAS</h2>";
+let indumen= document.getElementsByClassName("indu")[0];
+indumen.appendChild(ind);
 
-    //FUNCION DE ORDEN SUP FOREACH 
-    articulos.forEach((articulo)=>{  
-        console.log(articulo.nombre);
-    })
-    
-    //FUNCION DE ORDEN SUP FIND
-    let articuloElegido=prompt("ingrese el articulo a comprar (ver articulos disponibles en consola)");
-    articulos.find ((articulo) =>{ if (articulo.nombre === articuloElegido) alert(articulo.nombre +" "+"$"+articulo.precio)
-    });
-    
+//SECCION CALZADO//
+let listaCalz = document.createElement("listaCalz");
+listaCalz.innerHTML="  <li> Nike </li><li> Adidas </li><li> Puma </li><li> Umbro </li><li> Topper </li>";
+let listaubCalz= document.getElementsByClassName("listaC")[0];
+listaubCalz.appendChild(listaCalz);
 
-let locales=Number(prompt("ingrese la cantidad de torneos locales de su equipo favorito"));
-let continentales=Number(prompt("ingrese la cantidad de torneos continentales de su equipo favorito"));
-let mundiales= Number(prompt("ingrese la cantidad de torneos mundiales de su equipo favorito"));
+let cal = document.createElement("cal");
+cal.innerHTML="<h2>CALZADOS</h2>";
+let ubcal= document.getElementsByClassName("calzado")[0];
+ubcal.appendChild(cal);
 
-class equipo{
- constructor(locales,continentales,mundiales){
-    this.locales=locales;
-    this.continentales=continentales;
-    this.mundiales=mundiales;
-    
-    //FUNCION
-    this.glorias=function(a,b,c){
-        let suma = a+b+c;
-        alert("Su equipo tiene un palmarés de "+suma+" trofeos")
-    }
-    }
-}
+//SECCION ACCESORIOS//
+let listaAc=document.createElement("listaAc");
+listaAc.innerHTML="<li> Palos de Hockey</li><li> Medias Deportivas</li><li> Pelotas de Futbol</li><li> Pelotas de Rugby</li><li> Balon de NFL</li>";
+let ubiLista=document.getElementsByClassName("listAccesorios")[0];
+ubiLista.appendChild(listaAc);
 
-let cuadro=new equipo(locales,continentales,mundiales);
-cuadro.glorias(locales,continentales,mundiales);
+let acces= document.createElement("acces");
+acces.innerHTML="<h2>ACCESORIOS</h2>";
+let ubiAc = document.getElementsByClassName("accesorios")[0];
+ubiAc.appendChild(acces);
+
+//SECCION FORMULARIOS
+let formTitulo= document.createElement("formT");
+formTitulo.innerHTML="<h2>REGISTRO PARA COMPRA</h2>";
+let ubiTitulo = document.getElementsByClassName("formT")[0];
+ubiTitulo.appendChild(formTitulo);

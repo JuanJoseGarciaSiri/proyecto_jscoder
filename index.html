@@ -1,14 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CHAMPIONS STORE</title>
 </head>
+
 <body>
-    <h1>BIENVENIDO A CHAMPIONS STORE</h1>
-    <h2>La tienda deportiva mas gloriosa de todo Uruguay</h2>
-    <script src="./main.js"></script>
+    <header>
+        <div class="presentacion"></div>
+        <div class="subtitulo"></div>    
+       </div>
+        <nav>
+            <ul>
+                <li class="menuitem"></li>
+                <li class="menuitem"></li>
+                <li class="menuitem"></li>
+                <li class="menuitem"></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <div class="deportes"></div>
+            <ul class="listaDep">
+            </ul>
+        </section>
+        <section>
+            <div class="indu"></div>
+            <ul class="listaIN"></ul>
+        </section>
+        <section>
+            <div class="calzado"></div>
+            <ul class="listaC"></ul>
+        </section>
+        <section>
+            <div class="accesorios"></div>            
+            <ul class="listAccesorios"></ul>
+        </section>
+        <section>
+            <div class="formT"></div>
+            <form>
+                <input type="text" class="form-control" placeholder="Nombre" aria-label="First name" required>
+                <input type="text" class="form-control" placeholder="Apellido" aria-label="Last name" required>
+                <input type="email" class="form-control" id="exampleFormControlInput1"  placeholder="ej. juanitoperez@gmail.com" required>
+                <input type="tel" class="form-control" maxlength="17" placeholder="Telefono ej.123456789" required
+                aria-label="Text input with dropdown button">
+                <div class="consultas">
+                    <textarea class="form-control " placeholder="Articulo A Comprar"></textarea>
+                  </div>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <h3>Todos los derechos reservados</h3>
+    </footer>
+  <script src="./main.js"></script>
 </body>
+
 </html>

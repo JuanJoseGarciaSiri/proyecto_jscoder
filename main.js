@@ -67,26 +67,55 @@ acces.innerHTML="<h3>ACCESORIOS</h3>";
 let ubiAc = document.getElementsByClassName("accesorios")[0];
 ubiAc.appendChild(acces);
 
-//SECCION FORMULARIOS
+//SECCION FORMULARIOS E INFO DEL USUARIO//////
 let formTitulo= document.createElement("h3");
 formTitulo.innerHTML="<h3>REGISTRO PARA COMPRA</h3>";
 let ubiTitulo = document.getElementsByClassName("formT")[0];
 ubiTitulo.appendChild(formTitulo);
 
-let form = document.getElementById("formulario");
-form.addEventListener('submit', function(event) {
-    event.preventDefault();
-    console.log("Su formulario ha sido enviado");
-});
-
  boton.onmousemove = () => {
    console.log("el mouse se esta moviendo, el usuario no esta afk");
  }
 
-let formul = document.getElementById("formulario");
-form.addEventListener('change', function(evento) {
-    let cambiado = evento.target;
-    console.log("El elemento ha sido modificado: ", cambiado);
+
+let form = document.getElementById("formulario");
+form.addEventListener('submit', function(event) {
+    event.preventDefault();
+    let nombre = document.getElementById("nombre").value;
+    let apellido= document.getElementById("apellido").value;
+    let mail =document.getElementById("mail").value;
+    let telefono=document.getElementById("telefono").value;
+    let articulo=document.getElementById("articulo").value;
+   
+    // CREO EL USUARIO CON LOS DATOS DEL FORMULARIO
+    const usuario=crearUsuarioNuevo(nombre,apellido,mail,telefono,articulo);
+    // MUESTRO EN CONSOLA EL MENSAJE
+    console.log("Formulario Enviado,", usuario.nombre);
+    //GUARDO EN EL LOCALSTORAGE AL USUARIO
+    savedUser(usuario);
+    //MUESTRO LOS DATOS QUE GUARDE
+    showUser(usuario);
 });
 
-//STORAGE///
+//FUNCIONES
+function crearUsuarioNuevo(nombre,apellido,mail,telefono,articulo){
+    let usuarioNuevo={
+    nombre : nombre,
+    apellido : apellido,
+    mail: mail,
+    telefono : telefono,
+    articulo : articulo,
+};
+    return usuarioNuevo;
+}
+
+function savedUser(usuario){
+    localStorage.setItem("usuario",JSON.stringify(usuario));
+};
+
+function showUser(usuario){
+    localStorage.getItem("usuario");
+    //MUESTRO LOS VALORES EN LA CONSOLA PARA VERIFICAR QUE FUNCIONA JEJE
+    console.log(usuario.nombre, usuario.apellido, usuario.mail, usuario.telefono, usuario.articulo);
+}
+

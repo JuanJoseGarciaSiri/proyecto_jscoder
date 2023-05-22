@@ -17,6 +17,9 @@ items[3].innerHTML="Contacto";
 
 ///SECCIONES///
 
+//para proxima entrega sera estilizada como un catalogo con fotos//
+
+//modifico las listas de productos del HTML desde js
 //SECCION DEPORTES//
 let listaDep = document.createElement("ul");
 listaDep.innerHTML="<li> Futbol </li> <li> Basketball </li> <li> Rugby </li> <li> Hockey </li> <li> Futbol Americano</li> ";
@@ -119,3 +122,20 @@ function showUser(usuario){
     console.log(usuario.nombre, usuario.apellido, usuario.mail, usuario.telefono, usuario.articulo);
 }
 
+//BIENVENIDA AL COMIENZO DE LA PAGINA AL REFRESCAR, USANDO INFO GUARDADA
+document.addEventListener('DOMContentLoaded', function() {
+    if (localStorage.getItem("usuario")) {
+
+      //traigo la info desde el storage  
+      let usuariostorage = JSON.parse(localStorage.getItem("usuario"));
+      
+      //creo el elemento que va a tener el mensaje
+      let mensajeUsuario = document.createElement("h2");
+      mensajeUsuario.innerText = `Bienvenido/a de nuevo ${usuariostorage.nombre} ${usuariostorage.apellido}!`;
+      
+      //linkeo con mi div en html
+      let mensaje = document.getElementById("bienvenida");
+      mensaje.appendChild(mensajeUsuario);
+    }
+  });
+  

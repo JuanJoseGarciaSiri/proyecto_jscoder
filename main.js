@@ -122,7 +122,7 @@ function showUser(usuario){
     console.log(usuario.nombre, usuario.apellido, usuario.mail, usuario.telefono, usuario.articulo);
 }
 
-//BIENVENIDA AL COMIENZO DE LA PAGINA AL REFRESCAR, USANDO INFO GUARDADA
+//BIENVENIDA AL COMIENZO DE LA PAGINA AL REFRESCAR, USANDO INFO GUARDADA EN LOCALSTORAGE
 document.addEventListener('DOMContentLoaded', function() {
     if (localStorage.getItem("usuario")) {
 

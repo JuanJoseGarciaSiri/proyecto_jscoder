@@ -1,7 +1,94 @@
 
 .cabecera{
-    background-color: rgb(18, 0, 107);
+    background-color: rgb(38, 120, 192);
+    display: flex;
+    justify-content:space-evenly;
+    height:24vh;
+    width:100%;
+    position: fixed;
+    background-color: rgb(107, 135, 171);
+    z-index: 10;
+    .menu{
+        background-color: rgba(255, 192, 203, 0);
+        justify-content: space-evenly;
+        overflow-y: hidden; 
+        width: 80%;
+        padding: 5%;
+        font-size: 1.5em;
+        display: inline; 
+    }
+    a{
+        text-decoration: none;
+        color: black;
+    }
+    .menuitem{
+            list-style: none;
+            display: inline;
+            padding:4%;
+           text-decoration: none;
+        }  
+    .presentacion{
+        padding: 6%;
+    }
+   .logo{
+    padding-left: 14%;
+    margin-top: 4vh;
+    height: 20vh;
+    }
+}
+#bienvenida{
+    text-align: center;
 }
 .principal{
-    background-color: aqua;
+    padding-top: 15%;
+    background-color: rgb(170, 190, 190);
+
+}
+.deportes{
+    text-align: center;
+}
+.indu{
+    text-align: center;
+}
+.calzado{
+    text-align: center;
+}
+.formT{
+    text-align: center;
+}
+
+.depor{
+    margin:4%;
+}
+.card{
+    padding: 2%;
+}
+#formulario{
+    justify-content: center;
+    align-items: center;
+    font-size: 1em;
+    background-color: rgb(112, 111, 176);
+    overflow-x: hidden;    padding-bottom: 4%;
+}
+.form-control{
+    margin:3%;
+    width:40%;
+    overflow: hidden;  
+    margin-left:30%;
+
+
+}
+.botones{
+    justify-content: space-evenly;
+    margin-left: 30%;
+};
+.foot {
+    background-color: rgb(158, 156, 225);
+    color: rgb(7, 7, 7);
+    text-align: center;
+    height: 25vh;
+    width: 100%;
+    padding-top: 5%;
+    overflow-y: hidden;
+    overflow-x: hidden;
 }

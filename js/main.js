@@ -57,14 +57,13 @@ form.addEventListener('submit', function (event) {
     },
     buttonsStyling: false
   })
-
   swalWithBootstrapButtons.fire({
     title: 'Estas seguro de tu Registro?',
     text: "Tu compra esta cada vez mas cerca!",
     icon: 'warning',
     showCancelButton: true,
-    confirmButtonText: 'Confirmar!',
-    cancelButtonText: 'Cancelar!',
+    confirmButtonText: 'Confirmar',
+    cancelButtonText: 'Cancelar',
     reverseButtons: true
   }).then((result) => {
     if (result.isConfirmed) {

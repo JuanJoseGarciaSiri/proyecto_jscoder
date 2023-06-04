@@ -73,6 +73,11 @@
   justify-content: space-evenly;
   margin-left: 30%; }
 
+.botonSec {
+  justify-content: center;
+  align-items: center;
+  text-align: center; }
+
 .foot {
   background-color: #9e9ce1;
   color: #070707;

@@ -44,7 +44,86 @@ formTitulo.innerHTML = "<h3>REGISTRO PARA COMPRA</h3>";
 let ubiTitulo = document.getElementsByClassName("formT")[0];
 ubiTitulo.appendChild(formTitulo);
 
+// Creo el div
+let divFormulario = document.createElement('div');
+divFormulario.className = 'formT';
 
+// Creo el formulario
+let formulario = document.createElement('form');
+formulario.id = 'formulario';
+
+// nombre
+let inputNombre = document.createElement('input');
+inputNombre.type = 'text';
+inputNombre.className = 'form-control';
+inputNombre.id = 'nombre';
+inputNombre.placeholder = 'Nombre';
+inputNombre.setAttribute('aria-label', 'First name');
+inputNombre.required = true;
+
+// apellido
+let inputApellido = document.createElement('input');
+inputApellido.type = 'text';
+inputApellido.className = 'form-control';
+inputApellido.id = 'apellido';
+inputApellido.placeholder = 'Apellido';
+inputApellido.setAttribute('aria-label', 'Last name');
+inputApellido.required = true;
+
+// correo electrónico
+let inputMail = document.createElement('input');
+inputMail.type = 'email';
+inputMail.className = 'form-control';
+inputMail.id = 'mail';
+inputMail.placeholder = 'ej. juanitoperez@gmail.com';
+inputMail.required = true;
+
+// teléfono
+let inputTelefono = document.createElement('input');
+inputTelefono.type = 'tel';
+inputTelefono.className = 'form-control';
+inputTelefono.id = 'telefono';
+inputTelefono.placeholder = 'Telefono ej.123456789';
+inputTelefono.required = true;
+
+// consultas
+let divConsultas = document.createElement('div');
+divConsultas.className = 'consultas';
+
+// Creo la seccion para el artículo a comprar
+let textareaArticulo = document.createElement('textarea');
+textareaArticulo.className = 'form-control';
+textareaArticulo.id = 'articulo';
+textareaArticulo.placeholder = 'Articulo A Comprar';
+textareaArticulo.required = true;
+
+//Botones
+let divBotones = document.createElement('div');
+divBotones.className = 'botones';
+
+let inputEnviar = document.createElement('input');
+inputEnviar.type = 'submit';
+inputEnviar.value = 'Enviar';
+
+let inputLimpiar = document.createElement('input');
+inputLimpiar.type = 'reset';
+inputLimpiar.value = 'Limpiar';
+
+// Meto los elementos al formulario
+formulario.appendChild(inputNombre);
+formulario.appendChild(inputApellido);
+formulario.appendChild(inputMail);
+formulario.appendChild(inputTelefono);
+divConsultas.appendChild(textareaArticulo);
+divBotones.appendChild(inputEnviar);
+divBotones.appendChild(inputLimpiar);
+formulario.appendChild(divConsultas);
+formulario.appendChild(divBotones);
+
+let formT = document.querySelector('.formT');
+formT.appendChild(formulario);
+
+//configuro alertas y registro del objeto usuario
 let form = document.getElementById("formulario");
 form.addEventListener('submit', function (event) {
   event.preventDefault();

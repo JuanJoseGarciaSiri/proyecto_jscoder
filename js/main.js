@@ -114,11 +114,13 @@ formulario.appendChild(inputNombre);
 formulario.appendChild(inputApellido);
 formulario.appendChild(inputMail);
 formulario.appendChild(inputTelefono);
+formulario.appendChild(divConsultas);
+
 divConsultas.appendChild(textareaArticulo);
+formulario.appendChild(divBotones);
 divBotones.appendChild(inputEnviar);
 divBotones.appendChild(inputLimpiar);
-formulario.appendChild(divConsultas);
-formulario.appendChild(divBotones);
+
 
 let formT = document.querySelector('.formT');
 formT.appendChild(formulario);

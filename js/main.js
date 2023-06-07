@@ -223,27 +223,27 @@ document.addEventListener('DOMContentLoaded', function () {
 
 const listaProductos = document.querySelector('.lista-productos');
 
-let boton=document.getElementById('articuloSec');
-boton.addEventListener('click',function(click){
+let boton = document.getElementById('articuloSec');
+boton.addEventListener('click', function (click) {
   click.preventDefault();
   fetch('https://fakestoreapi.com/products?category=mens%20clothing')
-  .then(res => {
-    if (res.ok) {
-      return res.json();
-    } else {
-      throw new Error('Error en la respuesta de la solicitud fetch');
-    }
-  })
-  .then((json) => {
-    json.forEach(product => {
-      const li = document.createElement('li');
-      li.textContent = product.title + ' - ' + product.price;
-      listaProductos.appendChild(li);
+    .then(res => {
+      if (res.ok) {
+        return res.json();
+      } else {
+        throw new Error('Error en la respuesta de la solicitud fetch');
+      }
+    })
+    .then((json) => {
+      json.forEach(product => {
+        const li = document.createElement('li');
+        li.textContent = product.title + ' - ' + product.price;
+        listaProductos.appendChild(li);
+      });
+    })
+    .catch(error => {
+      console.error(error);
     });
-  })
-  .catch(error => {
-    console.error(error);
-  });
 })
 
 
